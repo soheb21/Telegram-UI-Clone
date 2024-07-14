@@ -8,25 +8,29 @@ import { TiAttachment } from "react-icons/ti";
 import { MdOutlineKeyboardVoice } from "react-icons/md";
 import { BsEmojiSmile } from "react-icons/bs";
 import { colors, firstLetter } from '../utils/common';
+import { IoArrowBackSharp } from "react-icons/io5";
 
 
-const Message = ({ id, name }) => {
+const Message = ({ id, name, isActive, setisActive }) => {
 
     const { data, loading, error } = useFetchOne("https://devapi.beyondchats.com/api/get_chat_messages?chat_id", id);
     const [isOpen, setIsOpen] = useState(false)
-    console.log("d", data)
 
-    // if (loading) return <div>Loading...</div>;
-    // if (error) return <div>Error: {error.message}</div>;
-    // console.log("dd", data)
+    if (loading) return <div>Loading...</div>;
+    if (error) return <div>Error: {error.message}</div>;
+
 
     return (
 
-        <div className="   flex-1 bg-white flex flex-col ">
+        <div className=" w-full md:flex-1 bg-white flex flex-col ">
             <div className="flex items-center justify-between px-4 py-2 border-b border-gray-300">
-                <div className="flex items-start space-x-4">
-                    <div className={`w-12 grid place-content-center uppercase h-12 text-white ${colors[Math.floor(id) % 10]} relative rounded-full`}>
-                        {firstLetter(name ? name : "A")}
+                <div className="flex items-start  space-x-4">
+                    <div className="flex gap-2 items-center ">
+                        <button className={`text-gray-500 ${isActive !== -1 && "block"} md:hidden`} onClick={() => setisActive(-1)}><IoArrowBackSharp /></button>
+
+                        <div className={`w-12 grid place-content-center uppercase h-12 text-white ${colors[Math.floor(id) % 10]} relative rounded-full`}>
+                            {firstLetter(name ? name : "A")}
+                        </div>
                     </div>
                     <div className="flex-col ">
                         <p className="font-semibold">{name ? name : "Anonymous"}</p>

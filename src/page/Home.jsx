@@ -3,7 +3,7 @@ import Side from '../components/Side'
 import useFetch from '../hook/useFetch';
 
 const Home = () => {
-  const { data, loading, error } = useFetch('https://devapi.beyondchats.com/api/get_all_chats?page=3');
+  const { data, loading, error } = useFetch('https://devapi.beyondchats.com/api/get_all_chats?page=2');
 
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error.message}</div>;
