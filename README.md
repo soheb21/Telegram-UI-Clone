@@ -5,7 +5,7 @@
 -Techonology: React and TailwindCSS 
 
 
-- Project Live as [Live Demo](https://main--guileless-seahorse-b89646.netlify.app/)
+- Project  [Live Demo](https://main--guileless-seahorse-b89646.netlify.app/)
 
 ![Screenshot (284)](https://github.com/user-attachments/assets/f73b23b6-591b-488a-9d7d-ccb46e125d58)
 ![Screenshot (285)](https://github.com/user-attachments/assets/f28de5b4-d378-40d1-82ae-8e975e49dced)
