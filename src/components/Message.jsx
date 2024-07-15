@@ -9,6 +9,7 @@ import { MdOutlineKeyboardVoice } from "react-icons/md";
 import { BsEmojiSmile } from "react-icons/bs";
 import { colors, firstLetter } from '../utils/common';
 import { IoArrowBackSharp } from "react-icons/io5";
+import Spinner from '../utils/Spinner';
 
 
 const Message = ({ id, name, isActive, setisActive }) => {
@@ -16,14 +17,14 @@ const Message = ({ id, name, isActive, setisActive }) => {
     const { data, loading, error } = useFetchOne("https://devapi.beyondchats.com/api/get_chat_messages?chat_id", id);
     const [isOpen, setIsOpen] = useState(false)
 
-    if (loading) return <div>Loading...</div>;
+    if (loading) return <Spinner />
     if (error) return <div>Error: {error.message}</div>;
 
 
     return (
 
-        <div className=" w-full md:flex-1 bg-white flex flex-col ">
-            <div className="flex items-center justify-between px-4 py-2 border-b border-gray-300">
+        <div className=" w-full md:flex-1 bg-custom-bg-light text-custom-primary-text dark:bg-custom-bg-dark dark:text-custom-dark-primary-text flex flex-col ">
+            <div className="flex items-center justify-between px-4 py-2 border-b  border-gray-300">
                 <div className="flex items-start  space-x-4">
                     <div className="flex gap-2 items-center ">
                         <button className={`text-gray-500 ${isActive !== -1 && "block"} md:hidden`} onClick={() => setisActive(-1)}><IoArrowBackSharp /></button>
@@ -66,14 +67,14 @@ const Message = ({ id, name, isActive, setisActive }) => {
                                                 {firstLetter(name ? name : "A")}
                                             </div>
                                             <div className="flex-1">
-                                                <div className="bg-gray-100 w-fit max-w-[50%]  p-1 rounded-lg rounded-bl-none">{mssg?.message}</div>
+                                                <div className="bg-custom-bg-light dark:bg-custom-bg-dark dark:text-custom-dark-primary-text w-fit max-w-[50%]  p-1 rounded-lg rounded-bl-none">{mssg?.message}</div>
                                             </div>
                                         </div>
 
                                     )
                                     : (
                                         <div className="flex  items-start  justify-end w-full space-x-2">
-                                            <div className="bg-gray-100 w-fit max-w-[50%] p-2 rounded-lg rounded-br-none">{mssg?.message}</div>
+                                            <div className=" bg-custom-bg-light dark:bg-custom-bg-dark dark:text-custom-dark-primary-text w-fit max-w-[50%] p-2 rounded-lg rounded-br-none">{mssg?.message}</div>
 
                                             <div className={`w-12 grid place-content-center uppercase h-12 text-white ${colors[7]} relative rounded-full`}>
                                                 {firstLetter(mssg?.sender?.name || 'A')}
@@ -97,7 +98,7 @@ const Message = ({ id, name, isActive, setisActive }) => {
                 <input
                     type="text"
                     placeholder="Write a message..."
-                    className="w-full p-2 outline-none"
+                    className="w-full p-2 outline-none bg-transparent"
                 />
                 <div className="ml-2 flex gap-2 items-center">
                     <span className='text-2xl cursor-pointer text-gray-400'><BsEmojiSmile /></span>
