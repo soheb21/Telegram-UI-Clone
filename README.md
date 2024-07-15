@@ -1,8 +1,9 @@
-# React + Vite
+# Telegram Web Clone
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+-In This Project We Have a responsive design ,Dark Mode Feature, Saerch Feature .
 
-Currently, two official plugins are available:
+-Techonology: React and TailwindCSS 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+- Project Live as [swc](https://main--guileless-seahorse-b89646.netlify.app/)
+
