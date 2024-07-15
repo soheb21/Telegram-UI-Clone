@@ -8,6 +8,10 @@ export default {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        'hero-pattern': "url('./main-bg.png')",
+        'hero-dark-pattern': "url('./dark-bg.jpg')",
+      },
       boxShadow: {
         'custom': '0 2px 4px rgba(0, 0, 0, 0.2)',
       },

@@ -23,8 +23,8 @@ const Message = ({ id, name, isActive, setisActive }) => {
 
     return (
 
-        <div className=" w-full md:flex-1 bg-custom-bg-light text-custom-primary-text dark:bg-custom-bg-dark dark:text-custom-dark-primary-text flex flex-col ">
-            <div className="flex items-center justify-between px-4 py-2 border-b  border-gray-300">
+        <div className=" w-full md:flex-1 bg-transparent text-custom-primary-text dark:bg-transparent  dark:text-custom-dark-primary-text flex flex-col ">
+            <div className="flex items-center justify-between px-4 py-2 border-b bg-custom-bg-light dark:bg-custom-bg-dark  border-gray-300">
                 <div className="flex items-start  space-x-4">
                     <div className="flex gap-2 items-center ">
                         <button className={`text-gray-500 ${isActive !== -1 && "block"} md:hidden`} onClick={() => setisActive(-1)}><IoArrowBackSharp /></button>
@@ -93,7 +93,7 @@ const Message = ({ id, name, isActive, setisActive }) => {
                 }
 
             </div>
-            <div className="flex items-center py-2 px-4 border-t border-gray-300">
+            <div className="flex bg-custom-bg-light dark:bg-custom-bg-dark items-center py-2 px-4 border-t border-gray-300">
                 <span className='text-3xl cursor-pointer text-gray-400 mr-2'><TiAttachment /></span>
                 <input
                     type="text"
